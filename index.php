@@ -36,7 +36,7 @@
 
     <div class="form-container">
         <h3>Creation de Compte</h3>
-        <form id="accountForm">
+        <form action=" ./src/sendDonnes.php" method="POST" id="accountForm">
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom" required>
@@ -49,11 +49,11 @@
             
             <div class="mb-3">
                 <label for="accountType" class="form-label">Type de compte</label>
-                <select class="form-select" name="type" id="accountType" required>
+                <select class="form-select" name="accountType" id="accountType" required>
                     <option value=""> Selectionnez un type </option>
-                    <option value="epargne">Compte epargne</option>
-                    <option value="courant">Compte courant</option>
-                    <option value="business">Compte business</option>
+                    <option value="epargne">savings</option>
+                    <option value="courant">current</option>
+                    <option value="business">business</option>
                 </select>
             </div>
             
@@ -64,6 +64,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assest/js/script.js"></script>
+    <!-- <script src="assest/js/script.js"></script> -->
 </body>
 </html>
