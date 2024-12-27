@@ -15,70 +15,35 @@ $stmt->execute([
 $lastId=$pdo->lastInsertId();
 
 // echo $lastId;
-
+if($client->getAccountType()==="current")
 {
 $currentAccount=new currentAccount($lastId, $_POST["limitt"]);
 
     $stmt=$pdo->prepare("insert into currentaccount(accountID,limitt) values(:accountID, :limitt) ");
 $stmt->execute([
-    ':accountID' => $currentAccount->getaccountID(),
-    ':limitt' => $currentAccount->getlimitt()
+    ':accountID' => $currentAccount->getAccountID(),
+    ':limitt' => $currentAccount->getLimitt()
     
 ]);
 }
-print_r( $currentAccount->getaccountID());
+
+else
+{
+    $savingAccount=new savingAccount($lastId, $_POST["interet"]);
+    
+        $stmt=$pdo->prepare("insert into savingAccount(accountID,interet) values(:accountID, :interet) ");
+    $stmt->execute([
+        ':accountID' => $savingAccount->getAccountID(),
+        ':interet' => $savingAccount->getInteret()
+        
+    ]);
+    }
+
+
+
+
+// print_r( $savingAccount->getaccountID());
 
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- try {
-            $query = "INSERT INTO account (holderName, balance) 
-                  VALUES (:holderName, :balance)";
-            $stmt = $conn->prepare($query);
-            $stmt->bindValue(':holderName', $this->holderName);
-            $stmt->bindValue(':balance', $this->balance);
-            if ($stmt->execute()) {
-                $id = $conn->lastInsertId();
-
-                if($typeAcc === "currentaccount"){
-                    $query1 = "INSERT INTO currentaccount (accountID,overdraftLimit) VALUES ($id,$val)";
-                    $stmt1 = $conn->prepare($query1);
-                    $stmt1->execute();
-                }
-                elseif($typeAcc == "savingaccount"){
-                    $query1 = "INSERT INTO savingaccount (accountID,interestRate) VALUES ($id,$val)";
-                    $stmt1 = $conn->prepare($query1);
-                    $stmt1->execute();
-                }
-                elseif($typeAcc == "businessaccount"){
-                    $query1 = "INSERT INTO businessaccount (accountID,transactionFee) VALUES ($id,$val)";
-                    $stmt1 = $conn->prepare($query1);
-                    $stmt1->execute();
-                }
-            }
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return false;
-        } -->

@@ -58,20 +58,20 @@
             </div>
 
 
-            <!-- <div id="fet" class="mb-3" style="display:none">
+            <div id="fet" class="mb-3" style="display:none">
                 <label for="balance" class="form-label">fet</label>
-                <input type="number" class="form-control" id="balance" name="fet" placeholder="Entrez le solde" min="0" required>
-        </div> -->
+                <input type="number" class="form-control" id="fet" name="fet" placeholder="Entrez le solde" min="0" >
+        </div>
 
         <div id="limit" class="mb-3" style="display:block">
                 <label for="balance" class="form-label">limit</label>
-                <input type="number" class="form-control" id="balance" name="limitt" placeholder="Entrez le solde" min="0" required>
+                <input type="number" class="form-control" id="limitt" name="limitt" placeholder="Entrez le solde" min="0" >
         </div>
 
-        <!-- <div id="interet" class="mb-3" style="display:none">
+        <div id="interet" class="mb-3" style="display:none">
                 <label for="balance" class="form-label">interet</label>
-                <input type="number" class="form-control" id="balance" name="interet" placeholder="Entrez le solde" min="0" required>
-            </div> -->
+                <input type="number" class="form-control" id="interet" name="interet" placeholder="Entrez le solde" min="0" >
+            </div>
 
 
             
@@ -82,8 +82,8 @@
         
 
     </div>
+    <script src="assest/js/script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="assest/js/script.js"></script> -->
 </body>
 </html>

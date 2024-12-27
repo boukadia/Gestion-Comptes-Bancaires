@@ -7,12 +7,12 @@ public function __construct($accountID,$limitt){
     $this->limitt=$limitt;
   
 }
-public function getlimitt() {
+public function getLimitt() {
     return $this->limitt;
 }
 
 
-public function getaccountID() {
+public function getAccountID() {
     return $this->accountID;
 }
 
