@@ -49,18 +49,38 @@
             
             <div class="mb-3">
                 <label for="accountType" class="form-label">Type de compte</label>
-                <select class="form-select" name="accountType" id="accountType" required>
+                <select  class="form-select" name="accountType" id="accountType" required>
                     <option value=""> Selectionnez un type </option>
-                    <option value="epargne">savings</option>
-                    <option value="courant">current</option>
+                    <option value="savings">savings</option>
+                    <option value="current">current</option>
                     <option value="business">business</option>
                 </select>
             </div>
+
+
+            <!-- <div id="fet" class="mb-3" style="display:none">
+                <label for="balance" class="form-label">fet</label>
+                <input type="number" class="form-control" id="balance" name="fet" placeholder="Entrez le solde" min="0" required>
+        </div> -->
+
+        <div id="limit" class="mb-3" style="display:block">
+                <label for="balance" class="form-label">limit</label>
+                <input type="number" class="form-control" id="balance" name="limitt" placeholder="Entrez le solde" min="0" required>
+        </div>
+
+        <!-- <div id="interet" class="mb-3" style="display:none">
+                <label for="balance" class="form-label">interet</label>
+                <input type="number" class="form-control" id="balance" name="interet" placeholder="Entrez le solde" min="0" required>
+            </div> -->
+
+
             
             <div class="text-center">
                 <button type="submit" class="btn btn-primary w-100">Creer</button>
             </div>
         </form>
+        
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

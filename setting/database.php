@@ -2,7 +2,7 @@
 $serverHost="localhost";
 $serverUser="root";
 $password="";
-$database="gestionBank";
+$database="bankGestion";
 try {
     // connect databases
     $dns="mysql:host=".$serverHost.";dbname=".$database;
