@@ -1,5 +1,7 @@
 <?php 
+require_once "../setting/database.php";
 class account{
+
 protected $nom;
 protected $balance;
 protected $accountType;

@@ -1,14 +1,10 @@
+<?php 
+require_once "head.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Comptes Bancaires</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assest/css/style.css">
-  
-</head>
-<body>
+
+<body style="display: flex;flex-direction: column">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Welcome to Our Bank</a>
@@ -21,18 +17,44 @@
                         <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Comptes</a>
+                        <a class="nav-link" href="./src/comptes.php">Comptes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Solde</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Support</a>
-                    </li>
+                   
+                   
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container mt-5">
+        <div class="row">
+           
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">saving account </h5>
+                        <a href="./src/showSavingAccounts.php" class="btn btn-primary">saving account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">current account</h5>
+                       
+                        <a href="./src/showCurrentAccounts.php" class="btn btn-primary">current account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">businees account</h5>
+                        <a href="./src/showBusnisseAccounts.php" class="btn btn-primary">business account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="form-container">
         <h3>Creation de Compte</h3>
@@ -49,29 +71,30 @@
             
             <div class="mb-3">
                 <label for="accountType" class="form-label">Type de compte</label>
-                <select  class="form-select" name="accountType" id="accountType" required>
-                    <option value=""> Selectionnez un type </option>
-                    <option value="savings">savings</option>
-                    <option value="current">current</option>
-                    <option value="business">business</option>
-                </select>
+                <select onchange="show(event)" class="form-select" name="accountType" id="accountType" required>
+    <option value="">Selectionnez un type</option>
+    <option value="saving">saving</option>
+    <option value="current">current</option>
+    <option value="business">business</option>
+</select>
+
             </div>
 
 
-            <div id="fet" class="mb-3" style="display:none">
-                <label for="balance" class="form-label">fet</label>
-                <input type="number" class="form-control" id="fet" name="fet" placeholder="Entrez le solde" min="0" >
-        </div>
+            <div id="fee" class="mb-3" style="display:none">
+    <label for="balance" class="form-label">fee</label>
+    <input type="number" class="form-control" id="fee" name="fee" placeholder="Entrez le fee" min="0">
+</div>
 
-        <div id="limit" class="mb-3" style="display:block">
-                <label for="balance" class="form-label">limit</label>
-                <input type="number" class="form-control" id="limitt" name="limitt" placeholder="Entrez le solde" min="0" >
-        </div>
+<div id="limitt" class="mb-3" style="display:none">
+    <label for="balance" class="form-label">limit</label>
+    <input type="number" class="form-control" id="limitt" name="limitt" placeholder="limit" min="0">
+</div>
 
-        <div id="interet" class="mb-3" style="display:none">
-                <label for="balance" class="form-label">interet</label>
-                <input type="number" class="form-control" id="interet" name="interet" placeholder="Entrez le solde" min="0" >
-            </div>
+<div id="interet" class="mb-3" style="display:none">
+    <label for="balance" class="form-label">interet</label>
+    <input type="number" class="form-control" id="interet" name="interet" placeholder="Entrez le interet" min="0">
+</div>
 
 
             
@@ -82,7 +105,11 @@
         
 
     </div>
-    <script src="assest/js/script.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="">
+    <script src="./js/script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

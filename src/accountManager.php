@@ -2,6 +2,8 @@
 include "../setting/database.php";
 include "account.php";
 include "currentAccount.php";
+include "savingAccount.php";
+include "businessAccount.php";
 
 
 $client= new account($_POST["nom"],$_POST["balance"],accountType: $_POST["accountType"]);
@@ -27,7 +29,7 @@ $stmt->execute([
 ]);
 }
 
-else
+else if($client->getAccountType()==="saving")
 {
     $savingAccount=new savingAccount($lastId, $_POST["interet"]);
     
@@ -36,6 +38,14 @@ else
         ':accountID' => $savingAccount->getAccountID(),
         ':interet' => $savingAccount->getInteret()
         
+    ]);
+    }
+    else{
+        $businessAccount=new businessAccount($lastId, $_POST["interet"]);
+        $stmt=$pdo->prepare("insert into businessAccount(accountID,fee) values(:accountID, :fee) ");
+    $stmt->execute([
+        ':accountID' => $businessAccount->getAccountID(),
+        ':fee' => $businessAccount->getFee()
     ]);
     }
 
